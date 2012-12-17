@@ -1,3 +1,20 @@
+/*
+    algorithm.cpp - (c) Michael Weber, Jr. (2012)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "algorithm.h"
 
 /*
@@ -168,7 +185,6 @@ void Algorithm::calculate()
             results[z][4] = 0;
             for(int l = 0; l < numOfLayers; l++)
             {
-                printf("%lf, %lf, %lf\n", cx[l], max_x, min_x);
                 results[z][3] += (areas[l]*layers[l]->weight*(1-kv))*abs(point_x-cx[l])+kh*areas[l]*layers[l]->weight*(point_y-cy[l]);
                 results[z][4] += layers[l]->c*cx[l]*2*radius +
                         ((areas[l]*layers[l]->weight*(1-kv))*abs(point_x-cx[l])-kh*areas[l]*layers[l]->weight*(point_y-cy[l]))*tan(layers[l]->friction);
